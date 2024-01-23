@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class MemberFormControllerV1 implements ControllerV1 {
 
-    private MemberRepository memberRepository = MemberRepository.getInstance();
+
     @Override
     public void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String viewPath ="/WEB-INF/views/new-form.jsp";
