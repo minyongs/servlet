@@ -11,15 +11,15 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class MemberSaveControllerV1 implements ControllerV1 {
-    MemberRepository memberRepository = MemberRepository.getInstance();
+    MemberRepository memberRepository = MemberRepository.getInstance();// 멤버 저장소 객체 생성
     @Override
     public void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
-        int age = Integer.parseInt(request.getParameter("age"));
+        String username = request.getParameter("username"); //요청으로 온 유저네임
+        int age = Integer.parseInt(request.getParameter("age"));//요청으로 온 나이
 
-        Member member = new Member(username, age);
+        Member member = new Member(username, age); // 요청으로 온 정보로 멤버 객체 생성
 
-        memberRepository.save(member);
+        memberRepository.save(member); // 레포에 저장
 
         //모델에 데이터를 보관
 

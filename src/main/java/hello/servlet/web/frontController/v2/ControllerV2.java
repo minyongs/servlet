@@ -9,6 +9,7 @@ import java.io.IOException;
 
 public interface ControllerV2 {
 
+    //MyView 를 반환해야함 !
     MyView process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
 
 }

@@ -53,11 +53,12 @@ public class FrontControllerServletV3 extends HttpServlet {
 
         view.render(modelView.getModel(), request,response);
     }
-
+    //MyView 를 이용해서 물리경로만 뽑아냄
     private static MyView viewResolver(String viewName) {
         return new MyView("/WEB-INF/views/" + viewName + ".jsp");
     }
 
+    // request 에서 paraMap 에 파라미터 정보들을 싹다 넘겨주는 메서드
     private static Map<String, String> createParamMap(HttpServletRequest request) {
         Map<String,String> paraMap = new HashMap<>();
         request.getParameterNames().asIterator()

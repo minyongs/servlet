@@ -38,7 +38,7 @@ public class FrontControllerServletV2 extends HttpServlet {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
-
+        //컨트롤러의 반환결과는 MyView
         MyView view = controller.process(request, response);
         view.render(request,response);
     }
